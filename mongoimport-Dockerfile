@@ -1,0 +1,3 @@
+FROM mongo
+COPY users1m.csv users.csv
+ENTRYPOINT mongoimport --host $HOST --db $DB --collection users --type csv --headerline --ignoreBlanks --file users.csv
